@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmbiceencjagp"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_ygt0u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wfymt"]
+
+[node name="Node" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_ygt0u")
+
+[node name="Collision" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_wfymt")
+
+[node name="Head" type="Node3D" parent="Player"]
+
+[node name="Camera" type="Camera3D" parent="Player/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612905, 0)
+
+[node name="Hook" type="Area3D" parent="Player/Head"]
+
+[node name="Rope" type="Node3D" parent="Player/Head"]
+
+[node name="Rope_Model" type="CSGCylinder3D" parent="Player/Head/Rope"]
+transform = Transform3D(1, 0, 0, 0, 0.0802511, 0.996775, 0, -0.996775, 0.0802511, -0.0168817, 0.246804, -0.760165)
+radius = 0.060476
+height = 0.938662
+
+[node name="Aim" type="Marker3D" parent="Player/Head"]
