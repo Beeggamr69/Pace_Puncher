@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://hcylkdo2wtqs"]
+
+[ext_resource type="PackedScene" uid="uid://bx1k3gd8dv38s" path="res://environment/rock_boulder.tscn" id="1_rn7yh"]
+[ext_resource type="PackedScene" uid="uid://bc13hcutfhe7q" path="res://environment/rock_cliff.tscn" id="2_yn61y"]
+[ext_resource type="PackedScene" uid="uid://bliv3c5xyr2rd" path="res://environment/rock_pillar.tscn" id="3_uhdw2"]
+[ext_resource type="PackedScene" uid="uid://b6sruxowynycp" path="res://environment/sand.tscn" id="4_kiae3"]
+[ext_resource type="PackedScene" uid="uid://djauggn3w5bpd" path="res://characters/player/player.tscn" id="5_t4b3c"]
+[ext_resource type="Script" path="res://test/bullet_hit_effect_spawn.gd" id="6_btebw"]
+[ext_resource type="Script" path="res://characters/health_manager.gd" id="7_xtp6w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dln1k"]
+
+[sub_resource type="Sky" id="Sky_xxasf"]
+sky_material = SubResource("ProceduralSkyMaterial_dln1k")
+
+[sub_resource type="Environment" id="Environment_eqhdo"]
+background_mode = 2
+sky = SubResource("Sky_xxasf")
+ambient_light_color = Color(0.169763, 0.126283, 0.0335418, 1)
+fog_enabled = true
+fog_light_color = Color(0.595237, 0.545449, 0.436557, 1)
+fog_height = 1.0
+fog_height_density = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nid0v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gn40h"]
+
+[node name="World" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Rock_Boulder" parent="Environment" instance=ExtResource("1_rn7yh")]
+transform = Transform3D(0.660814, 0, -0.415434, -0.0261772, 0.984868, -0.0333964, 0.463138, 0.0556662, 0.590861, 0, 0, 0)
+
+[node name="Rock_Boulder3" parent="Environment" instance=ExtResource("1_rn7yh")]
+transform = Transform3D(-0.404936, -0.636946, -0.655993, 0.843897, -0.536505, 0, -0.351943, -0.553591, 0.754767, -3.68382, 0, -10.3883)
+
+[node name="Rock_Boulder2" parent="Environment" instance=ExtResource("1_rn7yh")]
+transform = Transform3D(0.892971, 0.21714, 0.394275, -0.450114, 0.430779, 0.782194, 0, -0.875945, 0.482411, 42.693, 0, 39.5154)
+
+[node name="Rock_Boulder4" parent="Environment" instance=ExtResource("1_rn7yh")]
+transform = Transform3D(1.06088, -0.120716, -0.322175, 1.21602, 0.105314, 0.281071, 0, -0.290882, 0.235465, 35.9665, 0, 47.2448)
+
+[node name="Rock_Cliff" parent="Environment" instance=ExtResource("2_yn61y")]
+transform = Transform3D(0.890292, 0, -0.45539, 0, 1, 0, 0.45539, 0, 0.890292, -26.7291, 0, -12.5625)
+
+[node name="Rock_Cliff2" parent="Environment" instance=ExtResource("2_yn61y")]
+transform = Transform3D(-0.839288, 0, -0.543687, 0, 1, 0, 0.543687, 0, -0.839288, -26.7291, 3.14303, 53.1153)
+
+[node name="Rock_Cliff3" parent="Environment" instance=ExtResource("2_yn61y")]
+transform = Transform3D(-1.10887, 0, 0.822453, 0, 1.27459, 0, -0.731361, 0, -1.24698, -26.7291, -12.3507, 22.5309)
+
+[node name="Rock_Pillar" parent="Environment" instance=ExtResource("3_uhdw2")]
+transform = Transform3D(0.446813, 0.00731085, -0.894598, 0.0038282, 0.999942, 0.0100838, 0.894619, -0.00793026, 0.446759, 24.0149, 2.85702, 0)
+
+[node name="Rock_Pillar2" parent="Environment" instance=ExtResource("3_uhdw2")]
+transform = Transform3D(-0.435938, 0, -0.899977, 0, 1, 0, 0.899977, 0, -0.435938, 48.9716, -2.75902, 46.3704)
+
+[node name="Sand" parent="Environment" instance=ExtResource("4_kiae3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Sand2" parent="Environment" instance=ExtResource("4_kiae3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 40)
+
+[node name="Sand3" parent="Environment" instance=ExtResource("4_kiae3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
+
+[node name="Sand4" parent="Environment" instance=ExtResource("4_kiae3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 40)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eqhdo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.600695, -0.341803, 0.722728, -0.215455, 0.939764, 0.265372, -0.769899, 0.00369289, -0.638155, 0, 36.8833, 0)
+shadow_enabled = true
+shadow_blur = 2.414
+
+[node name="Player" parent="." instance=ExtResource("5_t4b3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0829, 0.155427, 31.6753)
+
+[node name="BulletTestMarker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6173, 0.148121, 6.50646)
+visible = false
+script = ExtResource("6_btebw")
+
+[node name="TestTarget" type="StaticBody3D" parent="."]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("7_xtp6w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestTarget"]
+shape = SubResource("SphereShape3D_nid0v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2903, 0.815035, 17.7166)
+mesh = SubResource("SphereMesh_gn40h")

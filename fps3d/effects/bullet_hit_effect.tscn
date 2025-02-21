@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxojfwvrff6un"]
+
+[ext_resource type="Texture2D" uid="uid://dhrcrxsyhatja" path="res://effects/circle32.png" id="1_gjbhl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h784k"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(1, 1, 0.541176, 1)
+albedo_texture = ExtResource("1_gjbhl")
+texture_filter = 2
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qetmf"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+scale_min = 0.03
+scale_max = 0.03
+
+[sub_resource type="QuadMesh" id="QuadMesh_57o00"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c80fw"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_5f7dl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.0486486, 0.316216, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.796078, 1, 1, 1, 0.870588, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2k1cd"]
+gradient = SubResource("Gradient_5f7dl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wuvq4"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = 1.07288e-05
+angle_max = 720.0
+angular_velocity_min = -10.0
+angular_velocity_max = 9.99998
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.4
+scale_max = 0.5
+color = Color(0.381703, 0.381703, 0.381703, 1)
+color_ramp = SubResource("GradientTexture1D_2k1cd")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4efka"]
+radial_segments = 7
+rings = 3
+
+[sub_resource type="QuadMesh" id="QuadMesh_3iag3"]
+
+[node name="BulletHitEffect" type="Node3D"]
+
+[node name="SparkParticles" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_h784k")
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qetmf")
+draw_pass_1 = SubResource("QuadMesh_57o00")
+
+[node name="SmokeParticles" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_c80fw")
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wuvq4")
+draw_pass_1 = SubResource("SphereMesh_4efka")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_3iag3")
+
+[node name="Decal" type="Decal" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.1, 0.1, 0.1)
+texture_albedo = ExtResource("1_gjbhl")
+modulate = Color(0.165656, 0.165656, 0.165656, 1)
+distance_fade_enabled = true
+
+[connection signal="tree_entered" from="." to="SparkParticles" method="restart"]
+[connection signal="tree_entered" from="." to="SmokeParticles" method="restart"]
