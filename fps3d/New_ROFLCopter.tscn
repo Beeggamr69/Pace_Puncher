@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci7mhffa1dmyj"]
+
+[ext_resource type="PackedScene" uid="uid://673211t5isv8" path="res://ROFLCopter.gltf" id="1_b02wx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tr7r1"]
+size = Vector3(0.205597, 0.497223, 0.628326)
+
+[node name="blockbench_export" instance=ExtResource("1_b02wx")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.00164223, 0.506063, -0.161553)
+shape = SubResource("BoxShape3D_tr7r1")
+
+[node name="Propeller1" parent="Node" index="8"]
+transform = Transform3D(-0.720642, 0, 0.693307, 0, 1, 0, -0.693307, 0, -0.720642, 0, 0.9375, -0.0625)
+
+[node name="Propeller2" parent="Node" index="9"]
+transform = Transform3D(-8.15774e-09, 1, -7.03728e-08, 0.804971, -3.51864e-08, -0.593314, -0.593314, -6.14882e-08, -0.804971, 0, 0.6375, 0.6875)
