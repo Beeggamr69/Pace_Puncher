@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://djcrl77qr7is6"]
-
-[ext_resource type="PackedScene" uid="uid://b4u8aon5maaq7" path="res://weapons/crosshairs/Arms/RedArm.gltf" id="1_rmm64"]
-
-[node name="blockbench_export" instance=ExtResource("1_rmm64")]
