@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://civgt5c1wdc3s" path="res://characters/character_mover.tscn" id="2_y3v87"]
 [ext_resource type="PackedScene" uid="uid://ci8rx26e2ki0e" path="res://weapons/assets/machete.glb" id="3_5gmi2"]
 [ext_resource type="PackedScene" uid="uid://k5v8mfgtkcud" path="res://characters/health_manager.tscn" id="3_p5tgm"]
-[ext_resource type="PackedScene" uid="uid://bdko6h7k2q0tx" path="res://weapons/assets/machinegun.glb" id="4_ipe02"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="4_nr5jf"]
 [ext_resource type="PackedScene" uid="uid://dofn423w3oscs" path="res://weapons/assets/shotgun.glb" id="5_bl0na"]
 [ext_resource type="PackedScene" uid="uid://djcrl77qr7is6" path="res://weapons/assets/red_arm_replace.tscn" id="5_o183u"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d2j5ov7bbvgoc" path="res://weapons/bullet_emitters/bullet_emitter.tscn" id="7_vi7av"]
 [ext_resource type="PackedScene" uid="uid://bra3w8grm6d8o" path="res://weapons/bullet_emitters/hit_scan_bullet_emitter.tscn" id="8_04321"]
 [ext_resource type="Texture2D" uid="uid://c571872yslhc7" path="res://weapons/crosshairs/crosshair001.png" id="8_m3qxn"]
+[ext_resource type="PackedScene" uid="uid://dicc3fujix2m8" path="res://weapons/assets/yellow_arm_replace.tscn" id="10_wu0x1"]
 [ext_resource type="PackedScene" uid="uid://b0dbmikyli3qs" path="res://effects/muzzle_flash/assets/muzzleflash3.glb" id="11_m8k8r"]
 [ext_resource type="PackedScene" uid="uid://daekxj3nihvjp" path="res://weapons/bullet_emitters/burst_emitter.tscn" id="12_dhlkk"]
 [ext_resource type="Texture2D" uid="uid://c2nl17tvoj6mn" path="res://weapons/crosshairs/crosshair065.png" id="12_nh3ij"]
@@ -314,7 +314,6 @@ grow_vertical = 2
 texture = ExtResource("8_m3qxn")
 
 [node name="MachineGun" type="Node3D" parent="Camera3D/Weapon_Manager/Weapons"]
-visible = false
 script = ExtResource("4_nr5jf")
 automatic = true
 attack_rate = 0.1
@@ -322,8 +321,8 @@ attack_rate = 0.1
 [node name="Graphics" type="Node3D" parent="Camera3D/Weapon_Manager/Weapons/MachineGun"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.137998)
 
-[node name="machinegun" parent="Camera3D/Weapon_Manager/Weapons/MachineGun/Graphics" instance=ExtResource("4_ipe02")]
-transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 0.152125, -0.00828063, 0.12042)
+[node name="machinegun2" parent="Camera3D/Weapon_Manager/Weapons/MachineGun/Graphics" instance=ExtResource("10_wu0x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263649, 0, 0.32942)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/Weapon_Manager/Weapons/MachineGun/Graphics"]
 libraries = {

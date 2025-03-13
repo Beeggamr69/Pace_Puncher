@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://hcylkdo2wtqs"]
+[gd_scene load_steps=15 format=3 uid="uid://hcylkdo2wtqs"]
 
 [ext_resource type="PackedScene" uid="uid://bx1k3gd8dv38s" path="res://environment/rock_boulder.tscn" id="1_rn7yh"]
 [ext_resource type="PackedScene" uid="uid://bc13hcutfhe7q" path="res://environment/rock_cliff.tscn" id="2_yn61y"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://djauggn3w5bpd" path="res://characters/player/player.tscn" id="5_t4b3c"]
 [ext_resource type="Script" path="res://test/bullet_hit_effect_spawn.gd" id="6_btebw"]
 [ext_resource type="Script" path="res://characters/health_manager.gd" id="7_xtp6w"]
+[ext_resource type="PackedScene" uid="uid://cwaj13lco37e1" path="res://New_ROFLCopter.tscn" id="8_3536d"]
+[ext_resource type="Script" path="res://new_rofl_copter.gd" id="9_civk2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dln1k"]
 
@@ -96,3 +98,7 @@ shape = SubResource("SphereShape3D_nid0v")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestTarget"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2903, 0.815035, 17.7166)
 mesh = SubResource("SphereMesh_gn40h")
+
+[node name="blockbench_export" parent="." instance=ExtResource("8_3536d")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 17.6583, 0, 17.9562)
+script = ExtResource("9_civk2")

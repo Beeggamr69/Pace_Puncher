@@ -41,7 +41,7 @@ signal hook_detached()
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(launch_action_name):
 		hook_launched.emit()
-		
+		$"../ODM/Fist".visible = false
 		match is_hook_launched:
 			false: _launch_hook()
 			true: _retract_hook()
@@ -81,7 +81,7 @@ func _retract_hook() -> void:
 	_hook_model.queue_free()
 	
 	hook_detached.emit()
-
+	$"../ODM/Fist".visible = true
 
 
 ## the code that manages the hook physics and its movement

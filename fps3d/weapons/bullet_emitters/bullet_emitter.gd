@@ -19,9 +19,8 @@ func set_bodies_to_exclude (bodies: Array):
 	for child in get_children():
 		if child is BulletEmitter:
 			child.set_bodies_to_exclude(bodies)
-				
+		
 
-# 
 func fire():
 	print("fire")
 	for child in get_children():

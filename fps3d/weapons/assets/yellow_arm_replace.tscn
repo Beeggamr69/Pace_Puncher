@@ -1,6 +1,5 @@
-[gd_scene load_steps=20 format=4 uid="uid://dicc3fujix2m8"]
+[gd_scene load_steps=19 format=4 uid="uid://dicc3fujix2m8"]
 
-[ext_resource type="PackedScene" uid="uid://bdko6h7k2q0tx" path="res://weapons/assets/machinegun.glb" id="1_oxqou"]
 [ext_resource type="Texture2D" uid="uid://duu4lgfq64yq8" path="res://weapons/crosshairs/Arms/YellowArm_0.png" id="2_cmap8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaqbs"]
@@ -27,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6hby3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ujqvi"]
 resource_name = "blockbench_export_mesh"
 _surfaces = [{
 "aabb": AABB(-0.125, 0.125, -0.3125, 0.25, 0.25, 0.625),
@@ -59,7 +58,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jp3rm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ihrsp"]
 resource_name = "blockbench_export_mesh2"
 _surfaces = [{
 "aabb": AABB(-0.09375, -0.125, -0.09375, 0.25, 0.25, 0.25),
@@ -91,7 +90,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u4l8w"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ih466"]
 resource_name = "blockbench_export_mesh3"
 _surfaces = [{
 "aabb": AABB(0, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -123,7 +122,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i5m3d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5nxhu"]
 resource_name = "blockbench_export_mesh4"
 _surfaces = [{
 "aabb": AABB(0, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -155,7 +154,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_44436"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6n0cu"]
 resource_name = "blockbench_export_mesh5"
 _surfaces = [{
 "aabb": AABB(0, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -187,7 +186,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bbh87"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_s07je"]
 resource_name = "blockbench_export_mesh6"
 _surfaces = [{
 "aabb": AABB(0, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -219,7 +218,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_75ba5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_owi3g"]
 resource_name = "blockbench_export_mesh7"
 _surfaces = [{
 "aabb": AABB(-0.0625, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -251,7 +250,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7b758"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mwvse"]
 resource_name = "blockbench_export_mesh8"
 _surfaces = [{
 "aabb": AABB(-0.0625, -0.025, 0.04375, 0.0625, 0.05, 0.1125),
@@ -269,46 +268,46 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yn1ld")
 
-[node name="machinegun" instance=ExtResource("1_oxqou")]
+[node name="Yellow_arm" type="Node3D"]
 
-[node name="Node" type="Node3D" parent="MachineGun" index="0"]
+[node name="Node" type="Node3D" parent="."]
 
-[node name="beveled_cuboid" type="MeshInstance3D" parent="MachineGun/Node" index="0"]
+[node name="beveled_cuboid" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
-mesh = SubResource("ArrayMesh_6hby3")
+mesh = SubResource("ArrayMesh_ujqvi")
 skeleton = NodePath("")
 
-[node name="cuboid" type="MeshInstance3D" parent="MachineGun/Node" index="1"]
+[node name="cuboid" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03125, 0.25, -0.3125)
-mesh = SubResource("ArrayMesh_jp3rm")
+mesh = SubResource("ArrayMesh_ihrsp")
 skeleton = NodePath("")
 
-[node name="cuboid2" type="MeshInstance3D" parent="MachineGun/Node" index="2"]
+[node name="cuboid2" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03125, 0.25, -0.5625)
-mesh = SubResource("ArrayMesh_u4l8w")
+mesh = SubResource("ArrayMesh_ih466")
 skeleton = NodePath("")
 
-[node name="cuboid3" type="MeshInstance3D" parent="MachineGun/Node" index="3"]
+[node name="cuboid3" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09375, 0.25, -0.5625)
-mesh = SubResource("ArrayMesh_i5m3d")
+mesh = SubResource("ArrayMesh_5nxhu")
 skeleton = NodePath("")
 
-[node name="cuboid4" type="MeshInstance3D" parent="MachineGun/Node" index="4"]
+[node name="cuboid4" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, 0.09375, 0.35, -0.3625)
-mesh = SubResource("ArrayMesh_44436")
+mesh = SubResource("ArrayMesh_6n0cu")
 skeleton = NodePath("")
 
-[node name="cuboid5" type="MeshInstance3D" parent="MachineGun/Node" index="5"]
+[node name="cuboid5" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, 0.09375, 0.2875, -0.3625)
-mesh = SubResource("ArrayMesh_bbh87")
+mesh = SubResource("ArrayMesh_s07je")
 skeleton = NodePath("")
 
-[node name="cuboid6" type="MeshInstance3D" parent="MachineGun/Node" index="6"]
+[node name="cuboid6" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, -0.09375, 0.2875, -0.3625)
-mesh = SubResource("ArrayMesh_75ba5")
+mesh = SubResource("ArrayMesh_owi3g")
 skeleton = NodePath("")
 
-[node name="cuboid7" type="MeshInstance3D" parent="MachineGun/Node" index="7"]
+[node name="cuboid7" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 0.793353, -0.608761, 0, 0.608761, 0.793353, -0.09375, 0.35, -0.3625)
-mesh = SubResource("ArrayMesh_7b758")
+mesh = SubResource("ArrayMesh_mwvse")
 skeleton = NodePath("")
