@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://micgwbpw0qyy"]
+
+[ext_resource type="Script" path="res://addons/destrohook/scripts/player.gd" id="1_5t7oi"]
+[ext_resource type="Texture2D" uid="uid://cl8rqkm7v50jl" path="res://addons/destrohook/textures/white_checkers.png" id="2_a4764"]
+[ext_resource type="Script" path="res://addons/destrohook/scripts/hook_controller.gd" id="2_yq2dk"]
+[ext_resource type="Texture2D" uid="uid://dnx2lsiobb1hn" path="res://addons/destrohook/textures/hook_not_availible.png" id="3_ee8s0"]
+[ext_resource type="Texture2D" uid="uid://cskw882fffi36" path="res://addons/destrohook/textures/hook_availible.png" id="3_k3ota"]
+[ext_resource type="PackedScene" uid="uid://dlqm10204rcaq" path="res://addons/destrohook/scenes/hook.tscn" id="3_ruq25"]
+[ext_resource type="PackedScene" uid="uid://46naaasrwjur" path="res://Grappling_Hook_Launcher.gltf" id="7_kegda"]
+[ext_resource type="PackedScene" uid="uid://cnguqrfyjycqj" path="res://Grappling_Hook.gltf" id="8_ynnyn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iop0k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5g242"]
+albedo_texture = ExtResource("2_a4764")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rx8sc"]
+radial_segments = 16
+rings = 4
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "hook_raycast", "crosshair", "hook_controller")]
+script = ExtResource("1_5t7oi")
+HOOK_AVAILIBLE_TEXTURE = ExtResource("3_k3ota")
+HOOK_NOT_AVAILIBLE_TEXTURE = ExtResource("3_ee8s0")
+camera = NodePath("Camera")
+hook_raycast = NodePath("Camera/Hook Raycast")
+crosshair = NodePath("HUD/Crosshair")
+hook_controller = NodePath("HookController")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_iop0k")
+
+[node name="body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_5g242")
+mesh = SubResource("CapsuleMesh_rx8sc")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="ODM" type="Node3D" parent="Camera"]
+transform = Transform3D(-0.75, 0, -6.55671e-08, 0, 0.75, 0, 6.55671e-08, 0, -0.75, -0.025331, -0.5, 0.153343)
+
+[node name="HookRopeStart" type="Marker3D" parent="Camera/ODM"]
+transform = Transform3D(-1.33333, 3.01689e-08, 1.12592e-07, 0, 1.2879, -0.345092, -1.16564e-07, -0.345092, -1.2879, -0.48543, 0.309, 1.08789)
+
+[node name="Arm" parent="Camera/ODM" instance=ExtResource("7_kegda")]
+transform = Transform3D(-1.33333, 3.47387e-15, 1.16564e-07, 0, 1.33333, -3.97364e-08, -1.16564e-07, -3.97364e-08, -1.33333, -0.475284, -0.0269831, 1.00792)
+
+[node name="Fist" parent="Camera/ODM" instance=ExtResource("8_ynnyn")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.478301, 0.0595626, 1.05414)
+
+[node name="Hook Raycast" type="RayCast3D" parent="Camera"]
+target_position = Vector3(0, 0, -50)
+
+[node name="HookController" type="Node" parent="." node_paths=PackedStringArray("player_body", "hook_raycast", "hook_source")]
+script = ExtResource("2_yq2dk")
+hook_scene = ExtResource("3_ruq25")
+player_body = NodePath("..")
+hook_raycast = NodePath("../Camera/Hook Raycast")
+hook_source = NodePath("../Camera/ODM/HookRopeStart")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="TextureRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_k3ota")
