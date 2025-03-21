@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyvuls1hfdwh"]
+
+[ext_resource type="PackedScene" uid="uid://c8nmkx3rrpvhy" path="res://addons/destrohook/scenes/ROFLCopter (1).gltf" id="1_2uxuc"]
+[ext_resource type="Script" path="res://enemyFly.gd" id="2_r8w7k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e31ao"]
+size = Vector3(1.41675, 2.11513, 1.92059)
+
+[node name="blockbench_export" instance=ExtResource("1_2uxuc")]
+script = ExtResource("2_r8w7k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00183105, 1.22044, -0.372528)
+shape = SubResource("BoxShape3D_e31ao")
+
+[node name="Node" parent="." index="1"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Propeller2" parent="Node" index="9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.999048, -4.36698e-08, 0.0436194, 0.0436194, 1.90666e-09, 0.999048, 0, 0.6375, 0.6875)
