@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cicxjko5tjd2d"]
+
+[ext_resource type="Shader" uid="uid://dl0bcnwt8gosg" path="res://Shader/outline.tres" id="1_2jhwc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4tx46"]
+render_priority = 0
+shader = ExtResource("1_2jhwc")
+shader_parameter/FloatParameter = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okju3"]
+next_pass = SubResource("ShaderMaterial_4tx46")
+albedo_color = Color(0.159879, 0.33004, 0.233693, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_22saw"]
+material = SubResource("StandardMaterial3D_okju3")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_22saw")
