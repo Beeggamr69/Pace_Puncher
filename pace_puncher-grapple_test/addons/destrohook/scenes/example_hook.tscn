@@ -166,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70848, 22.5319, 0)
 curve = SubResource("Curve3D_oapid")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.0174585, 0, -0.999848, 0, 1.00004, 0, 0.999848, 0, 0.0174585, 0.381032, 10, -0.00331381)
+transform = Transform3D(0.0174585, 0, -0.999848, 0, 1.00004, 0, 0.999848, 0, 0.0174585, 0.381032, 10, -0.0033138)
 progress = 0.380981
 rotation_mode = 4
 script = ExtResource("6_84u6e")
