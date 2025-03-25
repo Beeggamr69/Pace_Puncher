@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://micgwbpw0qyy"]
+[gd_scene load_steps=13 format=3 uid="uid://micgwbpw0qyy"]
 
 [ext_resource type="Script" path="res://addons/destrohook/scripts/player.gd" id="1_5t7oi"]
 [ext_resource type="Texture2D" uid="uid://cl8rqkm7v50jl" path="res://addons/destrohook/textures/white_checkers.png" id="2_a4764"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dlqm10204rcaq" path="res://addons/destrohook/scenes/hook.tscn" id="3_ruq25"]
 [ext_resource type="PackedScene" uid="uid://46naaasrwjur" path="res://Grappling_Hook_Launcher.gltf" id="7_kegda"]
 [ext_resource type="PackedScene" uid="uid://cnguqrfyjycqj" path="res://Grappling_Hook.gltf" id="8_ynnyn"]
+[ext_resource type="PackedScene" uid="uid://265xhjml0cyv" path="res://addons/destrohook/RedArm (2).gltf" id="9_05ewy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iop0k"]
 
@@ -38,6 +39,9 @@ mesh = SubResource("CapsuleMesh_rx8sc")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="blockbench_export" parent="Camera" instance=ExtResource("9_05ewy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317478, -0.54047, -0.547273)
 
 [node name="ODM" type="Node3D" parent="Camera"]
 transform = Transform3D(-0.75, 0, -6.55671e-08, 0, 0.75, 0, 6.55671e-08, 0, -0.75, -0.025331, -0.5, 0.153343)
