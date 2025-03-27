@@ -460,8 +460,8 @@ wait_time = 2.0
 [node name="TimerTestHeal" type="Timer" parent="HealthManager"]
 wait_time = 2.0
 
-[connection signal="timeout" from="Camera3D/Weapon_Manager/Timer" to="Camera3D/Weapon_Manager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Camera3D/Weapon_Manager/Timer" to="Camera3D/Weapon_Manager" method="test_attack_animation"]
+[connection signal="timeout" from="Camera3D/Weapon_Manager/Timer" to="Camera3D/Weapon_Manager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Camera3D/Bullet Emitter/Timer" to="Camera3D/Bullet Emitter" method="fire"]
 [connection signal="timeout" from="HealthManager/TimerTestDamage" to="HealthManager" method="test_damage"]
 [connection signal="timeout" from="HealthManager/TimerTestHeal" to="HealthManager" method="heal" binds= [10]]

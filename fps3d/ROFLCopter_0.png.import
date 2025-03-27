@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjmwue4hwccfi"
+uid="uid://dmdfihmlcacv5"
 path.s3tc="res://.godot/imported/ROFLCopter_0.png-92f0e8882ba1c1e39199d89226977002.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "bcdfe7092bada882e507c7578f36e6f7"
 }
 
 [deps]
