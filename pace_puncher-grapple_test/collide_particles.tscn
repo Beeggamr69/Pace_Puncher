@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://sd0cb77g76fr"]
+
+[ext_resource type="Shader" path="res://punch.gdshader" id="1_n1giq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ds4s"]
+render_priority = 0
+shader = ExtResource("1_n1giq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_loi2c"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n8cvl"]
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+material_override = SubResource("ShaderMaterial_7ds4s")
+emitting = false
+one_shot = true
+explosiveness = 0.63
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_loi2c")
+draw_pass_1 = SubResource("SphereMesh_n8cvl")

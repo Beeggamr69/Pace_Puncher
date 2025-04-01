@@ -28,8 +28,7 @@ var fist_available : bool
 @export var slow_speed = 15.0##when the player is moving too slowly
 @export var medium_speed = 20.0##when the player is moving a bit
 
-@onready var melee = $Camera/Attack/AnimationPlayer
-@onready var hitbox = $Camera/Attack/StaticBody3D/CollisionShape3D
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -46,7 +45,11 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("arm_use"):
 			$Camera/Attack/AnimationPlayer.play("attack")
-
+			$Camera/Attack/StaticBody3D/CollisionShape3D.disabled = false
+			if $Camera/Attack/AnimationPlayer.animation_finished:
+				$Camera/Attack/AnimationPlayer.play("return")
+				$Camera/Attack/StaticBody3D/CollisionShape3D.disabled = true
+			
 	if is_on_floor():#this changes how much control the player has while on the floor, while swinging around(dependant on speed), you want it low so the player cant just walk upwards
 		control = max_control
 	else:
