@@ -44,11 +44,7 @@ func _physics_process(delta: float) -> void:
 		max_speed = 15.0#speed when on floor
 
 	if Input.is_action_just_pressed("arm_use"):
-			$Camera/Attack/AnimationPlayer.play("attack")
-			$Camera/Attack/StaticBody3D/CollisionShape3D.disabled = false
-			if $Camera/Attack/AnimationPlayer.animation_finished:
-				$Camera/Attack/AnimationPlayer.play("return")
-				$Camera/Attack/StaticBody3D/CollisionShape3D.disabled = true
+			pass
 			
 	if is_on_floor():#this changes how much control the player has while on the floor, while swinging around(dependant on speed), you want it low so the player cant just walk upwards
 		control = max_control
