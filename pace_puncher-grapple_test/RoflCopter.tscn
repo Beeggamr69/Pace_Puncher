@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyvuls1hfdwh"]
+[gd_scene load_steps=4 format=3 uid="uid://frp8jxv00t5y"]
 
 [ext_resource type="PackedScene" uid="uid://c8nmkx3rrpvhy" path="res://addons/destrohook/scenes/ROFLCopter (1).gltf" id="1_2uxuc"]
 [ext_resource type="Script" path="res://enemyFly.gd" id="2_r8w7k"]

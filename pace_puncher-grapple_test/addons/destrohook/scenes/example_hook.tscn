@@ -1,12 +1,15 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=17 format=3 uid="uid://b2ns0ejqc0dlq"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://b2ns0ejqc0dlq"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://micgwbpw0qyy" path="res://addons/destrohook/scenes/player.tscn" id="1_gimlx"]
 [ext_resource type="Texture2D" uid="uid://cl8rqkm7v50jl" path="res://addons/destrohook/textures/white_checkers.png" id="2_tppjk"]
 [ext_resource type="Texture2D" uid="uid://b5fbiplwhvry" path="res://addons/destrohook/textures/orange_checkers.png" id="3_83uce"]
 [ext_resource type="Texture2D" uid="uid://bxjv1l4qsxhom" path="res://addons/destrohook/textures/blue_checkers.png" id="4_jomu1"]
 [ext_resource type="Script" path="res://addons/destrohook/scripts/moving_box.gd" id="5_0s0vf"]
-[ext_resource type="Script" path="res://addons/destrohook/scenes/path_follow_3d.gd" id="6_84u6e"]
-[ext_resource type="PackedScene" uid="uid://cl5ft3gu3457p" path="res://addons/destrohook/scenes/ROFLCopter.tscn" id="6_wir2x"]
+[ext_resource type="PackedScene" uid="uid://cl5ft3gu3457p" path="res://addons/destrohook/scenes/ROFLCopter.tscn" id="6_xm5or"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ip0h"]
 sky_top_color = Color(0, 0.482353, 0.992157, 1)
@@ -45,20 +48,13 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgibc"]
 albedo_texture = ExtResource("2_tppjk")
 
-[sub_resource type="Curve3D" id="Curve3D_oapid"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 25, 0, 0, 0, 10, 0, 25, 0, 0, -25, 0, 0, -1.234, 10, -42.483, -25, 0, 0, 25, 0, 0, 0, 10, 0),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
 [node name="Main" type="Node"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kb545")
 
 [node name="Sun" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 10, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 30.693, 0)
 shadow_enabled = true
 
 [node name="Credits" type="Label3D" parent="."]
@@ -160,6 +156,7 @@ use_collision = true
 size = Vector3(2, 2, 2)
 script = ExtResource("5_0s0vf")
 
+<<<<<<< Updated upstream
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70848, 22.5319, 0)
 curve = SubResource("Curve3D_oapid")
@@ -172,3 +169,7 @@ script = ExtResource("6_84u6e")
 
 [node name="blockbench_export" parent="Path3D/PathFollow3D" groups=["terrain"] instance=ExtResource("6_wir2x")]
 transform = Transform3D(5, 0, 2.84217e-14, 0, 5, 0, -2.84217e-14, 0, 5, -0.19508, -0.366856, -0.0929937)
+=======
+[node name="blockbench_export" parent="." instance=ExtResource("6_xm5or")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 12.4933, 23.4817, -21.518)
+>>>>>>> Stashed changes
