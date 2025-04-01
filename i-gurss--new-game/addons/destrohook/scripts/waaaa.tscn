@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3md6b57ga2hp"]
+
+[ext_resource type="Texture2D" uid="uid://bxcn6o62ymuw2" path="res://super wario.png" id="1_e3cck"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhq5s"]
+transparency = 1
+albedo_texture = ExtResource("1_e3cck")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v07nk"]
+gravity = Vector3(0, -56.8, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bhjv2"]
+
+[sub_resource type="Environment" id="Environment_5mi3l"]
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 2.0
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0364437, 0)
+
+[node name="GPUParticles3Dfire" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_yhq5s")
+amount = 645
+lifetime = 40.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_v07nk")
+draw_pass_1 = SubResource("QuadMesh_bhjv2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5mi3l")

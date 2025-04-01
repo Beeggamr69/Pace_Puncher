@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ryvm7103eo6"]
+
+[ext_resource type="PackedScene" uid="uid://micgwbpw0qyy" path="res://addons/destrohook/scenes/player.tscn" id="1_nt23c"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.44482)
+use_collision = true
+size = Vector3(1, 1, 3.88965)
+
+[node name="Player" parent="." instance=ExtResource("1_nt23c")]
+transform = Transform3D(0.992041, 0, 0, 0, 0.992041, 0, 0, 0, 0.992041, -0.527764, 1.32176, -1.48367)

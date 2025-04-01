@@ -1,0 +1,171 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwxtiscc255m0"]
+
+[ext_resource type="PackedScene" uid="uid://micgwbpw0qyy" path="res://addons/destrohook/scenes/player.tscn" id="1_1r5d7"]
+[ext_resource type="Texture2D" uid="uid://dbwf2q5cvpvrn" path="res://brick.jpg" id="1_08xn8"]
+
+[sub_resource type="Sky" id="Sky_6p2m5"]
+
+[sub_resource type="Environment" id="Environment_1c8rr"]
+background_mode = 1
+background_color = Color(0.463838, 0.635312, 1, 1)
+sky = SubResource("Sky_6p2m5")
+ambient_light_color = Color(1, 0, 0, 1)
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q52u7"]
+albedo_color = Color(0.615686, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h52a7"]
+albedo_color = Color(0.564706, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pqg5"]
+albedo_color = Color(0.576471, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muhu0"]
+albedo_color = Color(0.458824, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sd71"]
+albedo_color = Color(0.545098, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0203"]
+albedo_color = Color(0.470588, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqewc"]
+albedo_texture = ExtResource("1_08xn8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6lqn"]
+albedo_color = Color(0, 1, 0, 1)
+metallic = 0.56
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbmes"]
+albedo_color = Color(0.356863, 0.113725, 0, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_f70tb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg653"]
+albedo_color = Color(0.49736, 0.00259656, 0.798633, 1)
+metallic = 1.0
+roughness = 0.17
+emission_enabled = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_yjyg0"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00247383, -0.050808, -0.00999451)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1c8rr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.0384052, 0.999262, 0, -0.999262, 0.0384052, 0, 325.143, 0)
+light_energy = 2.8
+shadow_enabled = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8941, 0)
+use_collision = true
+height = 9.68135
+material = SubResource("StandardMaterial3D_q52u7")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 2.99313, 0)
+use_collision = true
+size = Vector3(1, 0.001, 1)
+material = SubResource("StandardMaterial3D_h52a7")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.81199, 0)
+use_collision = true
+height = 9.69659
+material = SubResource("StandardMaterial3D_6pqg5")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 12.6992, 0)
+use_collision = true
+size = Vector3(1, 0.001, 1)
+material = SubResource("StandardMaterial3D_muhu0")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.5431, 0)
+use_collision = true
+height = 9.68135
+material = SubResource("StandardMaterial3D_5sd71")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 22.4303, 0)
+use_collision = true
+size = Vector3(1, 0.001, 1)
+material = SubResource("StandardMaterial3D_y0203")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(10, -0.00567172, 0.00344733, 0.00566849, 9.99999, 0.00920145, -0.00345265, -0.00919945, 10, -0.0238712, -6.76635, 0.00590611)
+material_override = SubResource("StandardMaterial3D_hqewc")
+use_collision = true
+size = Vector3(100, 0.001, 100)
+
+[node name="Player" parent="." instance=ExtResource("1_1r5d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60308, -3.9905, -0.698094)
+
+[node name="tree" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.983, 0, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="tree"]
+transform = Transform3D(1.81297, 0, 0, 0, 1.96893, 0, 0, 0, 1.44818, -0.459628, -1.92336, -0.0697417)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="tree"]
+transform = Transform3D(1.11691, 0, 0, 0, 1.13182, 0, 0, 0, 0.578419, -0.459628, -1.92336, 0.583632)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="tree"]
+transform = Transform3D(1.11691, 0, 0, 0, 0.671431, 0, 0, 0, 0.578419, -0.459628, -1.33352, 0.273552)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="tree"]
+transform = Transform3D(0.654975, 0, 0, 0, 0.671431, 0, 0, 0, 0.578419, -1.12537, -1.51569, 0.273552)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="log" type="CSGCylinder3D" parent="tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459628, -4.44958, -0.00999451)
+use_collision = true
+radius = 0.259
+height = 4.72978
+material = SubResource("StandardMaterial3D_kbmes")
+
+[node name="tree 2; the sequel" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 23.983, 6.88027, 3.89681)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="tree 2; the sequel"]
+transform = Transform3D(1.81297, 0, 0, 0, 1.96893, 0, 0, 0, 1.44818, -0.459628, -1.92336, -0.0697417)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="tree 2; the sequel"]
+transform = Transform3D(1.11691, 0, 0, 0, 1.13182, 0, 0, 0, 0.578419, -0.459628, -1.92336, 0.583632)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="tree 2; the sequel"]
+transform = Transform3D(1.11691, 0, 0, 0, 0.671431, 0, 0, 0, 0.578419, -0.459628, -1.33352, 0.273552)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="tree 2; the sequel"]
+transform = Transform3D(0.654975, 0, 0, 0, 0.671431, 0, 0, 0, 0.578419, -1.12537, -1.51569, 0.273552)
+material = SubResource("StandardMaterial3D_k6lqn")
+
+[node name="log" type="CSGCylinder3D" parent="tree 2; the sequel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459628, -4.44958, -0.00999451)
+use_collision = true
+radius = 0.259
+height = 4.72978
+material = SubResource("StandardMaterial3D_kbmes")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(140.51, 0, 0, 0, 158.737, 0, 0, 0, 140.547, -3.29759, 70.6964, 223.392)
+use_collision = true
+mesh = SubResource("TubeTrailMesh_f70tb")
+material = SubResource("StandardMaterial3D_pg653")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(140.51, 0, 0, 0, 158.737, 0, 0, 0, 140.547, -3.29759, 124.172, 223.392)
+use_collision = true
+mesh = SubResource("TorusMesh_yjyg0")
+material = SubResource("StandardMaterial3D_pg653")

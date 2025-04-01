@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c15af6l81hvij"]
+
+[ext_resource type="PackedScene" uid="uid://673211t5isv8" path="res://addons/destrohook/ROFLCopter.gltf" id="1_b02wx"]
+[ext_resource type="Script" path="res://Pace_Puncher-grapple_test/new_rofl_copter.gd" id="2_fnibb"]
+[ext_resource type="AudioStream" uid="uid://b0urnbe6b56mm" path="res://boo!!!!!!!!!!.mp3" id="2_v6bq8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tr7r1"]
+size = Vector3(0.205597, 0.497223, 0.628326)
+
+[node name="blockbench_export" instance=ExtResource("1_b02wx")]
+script = ExtResource("2_fnibb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.00164223, 0.506063, -0.161553)
+shape = SubResource("BoxShape3D_tr7r1")
+
+[node name="Propeller2" parent="Node" index="9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.999048, -4.36698e-08, 0.0436194, 0.0436194, 1.90666e-09, 0.999048, 0, 0.6375, 0.6875)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_v6bq8")
+volume_db = 24.0
+pitch_scale = 0.25
+autoplay = true

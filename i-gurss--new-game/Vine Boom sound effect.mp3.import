@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3r0p5n8aiv51"
+path="res://.godot/imported/Vine Boom sound effect.mp3-97168af336b44b218b7fbeb9caf9ebe8.mp3str"
+
+[deps]
+
+source_file="res://Vine Boom sound effect.mp3"
+dest_files=["res://.godot/imported/Vine Boom sound effect.mp3-97168af336b44b218b7fbeb9caf9ebe8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

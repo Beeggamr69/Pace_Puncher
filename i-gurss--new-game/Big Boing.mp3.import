@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7isjh2ec2rbi"
+path="res://.godot/imported/Big Boing.mp3-5b1f1a73e3ba10e8c9bd6cc59073cd78.mp3str"
+
+[deps]
+
+source_file="res://Big Boing.mp3"
+dest_files=["res://.godot/imported/Big Boing.mp3-5b1f1a73e3ba10e8c9bd6cc59073cd78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
