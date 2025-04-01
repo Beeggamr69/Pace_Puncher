@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://frp8jxv00t5y"]
+[gd_scene load_steps=3 format=3 uid="uid://b2jhe8nr31tn"]
 
-[ext_resource type="PackedScene" uid="uid://c8nmkx3rrpvhy" path="res://addons/destrohook/scenes/ROFLCopter (1).gltf" id="1_2uxuc"]
 [ext_resource type="Script" path="res://enemyFly.gd" id="2_r8w7k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e31ao"]
 size = Vector3(1.41675, 2.11513, 1.92059)
 
-[node name="blockbench_export" instance=ExtResource("1_2uxuc")]
+[node name="blockbench_export"]
 script = ExtResource("2_r8w7k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]

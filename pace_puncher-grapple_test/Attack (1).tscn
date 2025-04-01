@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://81qr66rt85g"]
-
-[ext_resource type="PackedScene" uid="uid://265xhjml0cyv" path="res://addons/destrohook/RedArm (2).gltf" id="1_7qn46"]
+[gd_scene load_steps=2 format=3 uid="uid://cb2sbm5b8ynnn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb8ie"]
 size = Vector3(0.251465, 0.282654, 0.28064)
 
-[node name="blockbench_export" instance=ExtResource("1_7qn46")]
+[node name="blockbench_export"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node/cuboid" index="0"]
 
