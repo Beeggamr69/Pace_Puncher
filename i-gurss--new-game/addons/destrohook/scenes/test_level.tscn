@@ -43,7 +43,7 @@ albedo_color = Color(0.356863, 0.113725, 0, 1)
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_f70tb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg653"]
-albedo_color = Color(0.49736, 0.00259656, 0.798633, 1)
+albedo_color = Color(0, 0.32549, 0, 1)
 metallic = 1.0
 roughness = 0.17
 emission_enabled = true
@@ -73,6 +73,11 @@ shadow_enabled = true
 
 [node name="DirectionalLight3D5" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.0384052, 0.999262, 0, -0.999262, 0.0384052, -14.8655, 116.463, 294.006)
+light_energy = 2.8
+shadow_enabled = true
+
+[node name="DirectionalLight3D6" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.0384052, 0.999262, 0, -0.999262, 0.0384052, 70.8481, 8.65033, 255.493)
 light_energy = 2.8
 shadow_enabled = true
 
@@ -186,6 +191,18 @@ material = SubResource("StandardMaterial3D_pg653")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
 transform = Transform3D(140.51, 0, 0, 0, 158.737, 0, 0, 0, 140.547, -3.29759, 124.172, 223.392)
+use_collision = true
+mesh = SubResource("TorusMesh_yjyg0")
+material = SubResource("StandardMaterial3D_pg653")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(140.51, 0, 0, 0, -158.737, -1.2287e-05, 0, 1.38772e-05, -140.547, -3.29759, -80.9894, 226.228)
+use_collision = true
+mesh = SubResource("TubeTrailMesh_f70tb")
+material = SubResource("StandardMaterial3D_pg653")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(140.51, 0, 0, 0, -158.737, -1.2287e-05, 0, 1.38772e-05, -140.547, -3.29759, -134.163, 220.556)
 use_collision = true
 mesh = SubResource("TorusMesh_yjyg0")
 material = SubResource("StandardMaterial3D_pg653")
