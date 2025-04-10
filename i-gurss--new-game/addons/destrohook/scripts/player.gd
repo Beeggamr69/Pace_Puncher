@@ -39,7 +39,8 @@ func _physics_process(delta: float) -> void:
 		max_speed = 25.0#changing values of speed, so the player is faster when swinging around
 	else:
 		max_speed = 15.0#speed when on floor
-
+	if Input.is_action_pressed("sprint"):
+		max_speed = 50
 
 	if is_on_floor():#this changes how much control the player has while on the floor, while swinging around(dependant on speed), you want it low so the player cant just walk upwards
 		control = max_control

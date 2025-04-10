@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmpthrxbok2ha"]
+
+[ext_resource type="Texture2D" uid="uid://dgvl4le3cyy3p" path="res://waluigi.png" id="1_vpb6r"]
+[ext_resource type="Script" path="res://waluigi_ring.gd" id="1_yjfvh"]
+[ext_resource type="AudioStream" uid="uid://b0urnbe6b56mm" path="res://boo!!!!!!!!!!.mp3" id="3_2yllb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mah7j"]
+albedo_texture = ExtResource("1_vpb6r")
+
+[sub_resource type="TorusMesh" id="TorusMesh_riljl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3sgjn"]
+height = 0.177304
+
+[node name="woin" type="Area3D"]
+script = ExtResource("1_yjfvh")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -4.3764e-08, 0.000453679, 0.000453679, 4.37312e-08, 1, -4.37839e-08, 1, -4.37113e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_mah7j")
+mesh = SubResource("TorusMesh_riljl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0.0108508)
+shape = SubResource("CylinderShape3D_3sgjn")
+
+[node name="woinsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2yllb")
+volume_db = 24.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

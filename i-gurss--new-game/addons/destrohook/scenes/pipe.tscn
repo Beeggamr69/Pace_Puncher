@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8kcmgd1mjr4l"]
+
+[ext_resource type="Script" path="res://addons/destrohook/scenes/pipething.gd" id="1_siepc"]
+[ext_resource type="Texture2D" uid="uid://cwx1gefcphpgy" path="res://mateo hammer moment.png" id="1_vx4y7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns2y4"]
+albedo_texture = ExtResource("1_vx4y7")
+
+[node name="pipe" type="Node3D"]
+
+[node name="pipething" type="CSGTorus3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ns2y4")
+use_collision = true
+sides = 64
+ring_sides = 64
+script = ExtResource("1_siepc")

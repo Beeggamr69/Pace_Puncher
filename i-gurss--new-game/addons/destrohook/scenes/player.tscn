@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cskw882fffi36" path="res://addons/destrohook/textures/hook_availible.png" id="3_k3ota"]
 [ext_resource type="PackedScene" uid="uid://dlqm10204rcaq" path="res://addons/destrohook/scenes/hook.tscn" id="3_ruq25"]
 [ext_resource type="PackedScene" uid="uid://46naaasrwjur" path="res://Grappling_Hook_Launcher.gltf" id="7_kegda"]
+[ext_resource type="AudioStream" uid="uid://b0urnbe6b56mm" path="res://boo!!!!!!!!!!.mp3" id="8_ceu0l"]
 [ext_resource type="PackedScene" uid="uid://cnguqrfyjycqj" path="res://Grappling_Hook.gltf" id="8_ynnyn"]
-[ext_resource type="AudioStream" uid="uid://c7isjh2ec2rbi" path="res://Big Boing.mp3" id="9_24fgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iop0k"]
 
@@ -75,6 +75,6 @@ transform = Transform3D(-1.33333, 3.47387e-15, 1.16564e-07, 0, 1.33333, -3.97364
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.478301, 0.0595626, 1.05414)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_24fgy")
+stream = ExtResource("8_ceu0l")
 volume_db = 24.0
-pitch_scale = 0.4
+pitch_scale = 2.0

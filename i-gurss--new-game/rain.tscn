@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1k8tq4asgf51"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pkwms"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utv2c"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_g7ryp"]
+material = SubResource("StandardMaterial3D_utv2c")
+text = "raining"
+font_size = 127
+
+[sub_resource type="Environment" id="Environment_u5c85"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(900, 0, 0, 0, 900, 0, 0, 0, 900, 0, 0, 0)
+amount = 900
+lifetime = 40.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pkwms")
+draw_pass_1 = SubResource("TextMesh_g7ryp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u5c85")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b36rhnopyfl3u"]
+
+[ext_resource type="Script" path="res://the_cube.gd" id="1_ryt18"]
+[ext_resource type="AudioStream" uid="uid://b7ovc7a6b1sq0" path="res://Laugh3.wav" id="2_cywty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xf8pk"]
+albedo_color = Color(0.322459, 0.00131176, 0.62617, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0otom"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_xf8pk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_330m8"]
+size = Vector3(0.993164, 1, 1)
+
+[node name="Node3D" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.920318, 0)
+script = ExtResource("1_ryt18")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_0otom")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0, 0)
+shape = SubResource("BoxShape3D_330m8")
+
+[node name="thecube" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cywty")
+volume_db = 24.0
+pitch_scale = 0.4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="thecube" to="." method="_on_thecube_finished"]
